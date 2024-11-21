@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HandlerContention.MainPage">
+
+	<Grid BackgroundColor="LightGray">
+		<Grid.GestureRecognizers>
+		    <TapGestureRecognizer Tapped="Grid_Tapped" />
+	    </Grid.GestureRecognizers>
+
+		<VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="10">
+			<Border Padding="10" BackgroundColor="White" StrokeShape="{RoundRectangle CornerRadius=10}" >
+				<ListView WidthRequest="{OnPlatform iOS='130', Default='100'}" HeightRequest="{OnPlatform WinUI='120', Default='230'}" SelectionMode="Single" ItemTapped="ListView_ItemTapped">
+					<ListView.ItemsSource>
+						<x:Array Type="{x:Type x:String}">
+							<x:String>Apple</x:String>
+							<x:String>Orange</x:String>
+							<x:String>Banana</x:String>
+							<x:String>Grape</x:String>
+							<x:String>Strawberry</x:String>
+						</x:Array>
+					</ListView.ItemsSource>
+				</ListView>
+			</Border>
+
+			<Label x:Name="GridStatusLabel" TextColor="Red" HorizontalOptions="Center" />
+
+			<Label x:Name="ListViewStatusLabel" TextColor="Red" HorizontalOptions="Center" />
+		</VerticalStackLayout>
+	</Grid>
+
+</ContentPage>
